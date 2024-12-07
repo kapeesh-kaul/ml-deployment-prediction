@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def generate_dataset(file_name="data/synthetic_cost_dataset.csv", n_samples=1000, random_state = 42):
+def generate_dataset(file_name="syn_data/synthetic_cost_dataset.csv", n_samples=1e5, random_state = 42):
     """
     Generates a synthetic dataset for deep learning project cost estimation with highly randomized and advanced mathematical relationships.
     
@@ -103,7 +103,7 @@ def generate_dataset(file_name="data/synthetic_cost_dataset.csv", n_samples=1000
 
     return df
 
-def load_synthetic_dataset(file_name="data/synthetic_cost_dataset.csv"):
+def load_dataset(file_name="syn_data/synthetic_cost_dataset.csv"):
     """
     Loads the synthetic dataset from a CSV file.
     
