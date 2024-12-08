@@ -5,17 +5,20 @@ import torch.optim as optim
 from sklearn.metrics import mean_squared_error, r2_score
 
 # PyTorch model definition
-class PolynomialRegressionModel(nn.Module):
-    def __init__(self, input_dim, degree):
-        super(PolynomialRegressionModel, self).__init__()
-        self.degree = degree
-        self.output = nn.Linear(input_dim * degree, 1)
-    
-    def forward(self, x):
-        poly_features = torch.cat([x ** (i + 1) for i in range(self.degree)], dim=1)
-        return self.output(poly_features)
+class FeedforwardNeuralNetwork(nn.Module):
+    def __init__(self, input_dim, hidden_dim=64, num_layers=2):
+        super(FeedforwardNeuralNetwork, self).__init__()
+        layers = []
+        for _ in range(num_layers):
+            layers.append(nn.Linear(input_dim if len(layers) == 0 else hidden_dim, hidden_dim))
+            layers.append(nn.ReLU())
+        layers.append(nn.Linear(hidden_dim, 1))  # Output layer
+        self.network = nn.Sequential(*layers)
 
-# Model training function
+    def forward(self, x):
+        return self.network(x)
+
+# Model training function with backpropagation
 def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
     def init_weights(m):
         if isinstance(m, nn.Linear):
@@ -27,15 +30,18 @@ def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     training_log = {}
+
     for epoch in range(epochs):
-        optimizer.zero_grad()
-        outputs = model(X_train)
-        loss = criterion(outputs, y_train)
-        loss.backward()
-        optimizer.step()
+        optimizer.zero_grad()  # Reset gradients
+        outputs = model(X_train)  # Forward pass
+        loss = criterion(outputs, y_train)  # Compute loss
+        loss.backward()  # Backpropagation
+        optimizer.step()  # Update weights)
+        
         training_log[epoch + 1] = loss.item()
         if (epoch + 1) % 10 == 0:
             print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+
     print("Model training complete.")
     return training_log
 
@@ -47,5 +53,4 @@ def evaluate_model(model, X_test, y_test, y_mean, y_std):
         y_test = y_test.view(-1) * y_std + y_mean
         mse = mean_squared_error(y_test.cpu(), predictions.cpu())
         r2 = r2_score(y_test.cpu(), predictions.cpu())
-    # print(f"Model evaluation complete. MSE: {mse}, R2: {r2}")
     return {"Mean Squared Error": mse, "R2 Score": r2}
