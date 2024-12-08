@@ -4,5 +4,7 @@
     "num_layers": 2,
     "mlp_hidden_dim": 64,
     "dropout": 0.1,
-    "learning_rate": 0.001
+    "learning_rate": 0.001,
+    "batch_size": 1024,
+    "epochs": 100
 }

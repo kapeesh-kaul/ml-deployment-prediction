@@ -84,7 +84,7 @@ def run_polynomial_regression(device, overwrite=False, **params):
         model_name = f"polynomial_regression_deg_{params['degree']}_lr_{params['learning_rate']}"
 
         if overwrite or not load_model(model, model_name, device):
-            train_losses, val_losses = train_model(model, X_train, y_train, X_val, y_val, epochs=500, learning_rate=params["learning_rate"])
+            train_losses, val_losses = train_model(model, X_train, y_train, X_val, y_val, epochs=params["epochs"], learning_rate=params["learning_rate"])
             
             save_model(model, model_name)
 
@@ -128,7 +128,7 @@ def run_feedforward_nn(device, overwrite=False, **params):
                 y_train, 
                 X_val, 
                 y_val, 
-                epochs=500,
+                epochs=params["epochs"],
                 learning_rate=params["learning_rate"]
             )
             
@@ -183,8 +183,8 @@ def run_tab_transformer(device, overwrite=False, **params):
                 y_train, 
                 X_val, 
                 y_val, 
-                batch_size=1024, 
-                epochs=100, 
+                batch_size=params["batch_size"], 
+                epochs=params["epochs"], 
                 learning_rate=params["learning_rate"]
             )
 
