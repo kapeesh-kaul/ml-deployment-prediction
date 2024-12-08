@@ -19,7 +19,24 @@ class FeedforwardNeuralNetwork(nn.Module):
         return self.network(x)
 
 # Model training function with backpropagation
-def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
+def train_model(model, X_train, y_train, X_val, y_val, epochs=100, learning_rate=0.001):
+    """
+    Trains the model while logging both training and validation losses.
+
+    Parameters:
+        model: The PyTorch model to train.
+        X_train: Training features.
+        y_train: Training labels.
+        X_val: Validation features.
+        y_val: Validation labels.
+        epochs: Number of training epochs.
+        learning_rate: Learning rate for the optimizer.
+
+    Returns:
+        training_log (dict): Training losses per epoch.
+        validation_log (dict): Validation losses per epoch.
+    """
+    # Initialize model weights
     def init_weights(m):
         if isinstance(m, nn.Linear):
             nn.init.xavier_uniform_(m.weight)
@@ -28,22 +45,37 @@ def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
 
     model.train()
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
     training_log = {}
+    validation_log = {}
 
     for epoch in range(epochs):
+        # Training step
         optimizer.zero_grad()  # Reset gradients
         outputs = model(X_train)  # Forward pass
-        loss = criterion(outputs, y_train)  # Compute loss
-        loss.backward()  # Backpropagation
-        optimizer.step()  # Update weights)
-        
-        training_log[epoch + 1] = loss.item()
+        train_loss = criterion(outputs, y_train)  # Compute loss
+        train_loss.backward()  # Backpropagation
+        optimizer.step()  # Update weights
+
+        # Validation step
+        model.eval()  # Switch to evaluation mode
+        with torch.no_grad():
+            val_outputs = model(X_val)  # Forward pass for validation
+            val_loss = criterion(val_outputs, y_val)  # Compute validation loss
+
+        # Log losses
+        training_log[epoch + 1] = train_loss.item()
+        validation_log[epoch + 1] = val_loss.item()
+
+        # Print losses every 10 epochs
         if (epoch + 1) % 10 == 0:
-            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+            print(f"Epoch [{epoch+1}/{epochs}], Train Loss: {train_loss.item():.4f}, Val Loss: {val_loss.item():.4f}")
+
+        model.train()  # Switch back to training mode
 
     print("Model training complete.")
-    return training_log
+    return training_log, validation_log
 
 # Model evaluation function
 def evaluate_model(model, X_test, y_test, y_mean, y_std):

@@ -16,7 +16,24 @@ class PolynomialRegressionModel(nn.Module):
         return self.output(poly_features)
 
 # Model training function
-def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
+def train_model(model, X_train, y_train, X_val, y_val, epochs=100, learning_rate=0.001):
+    """
+    Trains the model while logging training and validation losses.
+
+    Parameters:
+        model: The PyTorch model to train.
+        X_train: Training features.
+        y_train: Training labels.
+        X_val: Validation features.
+        y_val: Validation labels.
+        epochs: Number of training epochs.
+        learning_rate: Learning rate for the optimizer.
+
+    Returns:
+        train_losses (dict): Training losses per epoch.
+        val_losses (dict): Validation losses per epoch.
+    """
+    # Initialize model weights
     def init_weights(m):
         if isinstance(m, nn.Linear):
             nn.init.xavier_uniform_(m.weight)
@@ -26,18 +43,37 @@ def train_model(model, X_train, y_train, epochs=100, learning_rate=0.001):
     model.train()
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-    training_log = {}
+    
+    train_losses = {}
+    val_losses = {}
+
     for epoch in range(epochs):
+        # Training step
         optimizer.zero_grad()
-        outputs = model(X_train)
-        loss = criterion(outputs, y_train)
-        loss.backward()
+        train_outputs = model(X_train)
+        train_loss = criterion(train_outputs, y_train)
+        train_loss.backward()
         optimizer.step()
-        training_log[epoch + 1] = loss.item()
+        
+        # Validation step
+        model.eval()  # Switch to evaluation mode
+        with torch.no_grad():
+            val_outputs = model(X_val)
+            val_loss = criterion(val_outputs, y_val)
+
+        # Log losses for the current epoch
+        train_losses[epoch + 1] = train_loss.item()
+        val_losses[epoch + 1] = val_loss.item()
+
+        model.train()  # Switch back to training mode
+
+        # Print losses every 10 epochs
         if (epoch + 1) % 10 == 0:
-            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+            print(f'Epoch [{epoch+1}/{epochs}] - Train Loss: {train_loss.item():.4f}, Val Loss: {val_loss.item():.4f}')
+
     print("Model training complete.")
-    return training_log
+    return train_losses, val_losses
+
 
 # Model evaluation function
 def evaluate_model(model, X_test, y_test, y_mean, y_std):

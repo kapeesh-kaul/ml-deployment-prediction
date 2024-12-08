@@ -42,7 +42,24 @@ class TabTransformer(nn.Module):
 
 
 # Model training function
-def train_tab_transformer(model, X_train, y_train, batch_size=1024, epochs=100, learning_rate=0.001):
+def train_tab_transformer(model, X_train, y_train, X_val, y_val, batch_size=1024, epochs=100, learning_rate=0.001):
+    """
+    Trains the TabTransformer model and logs both training and validation losses.
+
+    Parameters:
+        model: The TabTransformer model.
+        X_train: Training features.
+        y_train: Training labels.
+        X_val: Validation features.
+        y_val: Validation labels.
+        batch_size: Batch size for training.
+        epochs: Number of training epochs.
+        learning_rate: Learning rate for the optimizer.
+
+    Returns:
+        train_log (dict): Training losses per epoch.
+        val_log (dict): Validation losses per epoch.
+    """
     def init_weights(m):
         if isinstance(m, nn.Linear):
             nn.init.xavier_uniform_(m.weight)
@@ -56,25 +73,42 @@ def train_tab_transformer(model, X_train, y_train, batch_size=1024, epochs=100, 
     # Create DataLoader for mini-batch processing
     train_dataset = TensorDataset(X_train, y_train)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    training_log = {}
+
+    train_log = {}
+    val_log = {}
 
     for epoch in range(epochs):
-        epoch_loss = 0.0
+        # Training step
+        epoch_train_loss = 0.0
         for batch_X, batch_y in train_loader:
             optimizer.zero_grad()
             outputs = model(batch_X)  # Forward pass
-            loss = criterion(outputs, batch_y)
+            loss = criterion(outputs, batch_y)  # Compute training loss
             loss.backward()
             optimizer.step()
-            epoch_loss += loss.item()
+            epoch_train_loss += loss.item()
 
-        avg_epoch_loss = epoch_loss / len(train_loader)
-        training_log[epoch + 1] = avg_epoch_loss
+        avg_train_loss = epoch_train_loss / len(train_loader)
+
+        # Validation step
+        model.eval()  # Switch to evaluation mode
+        with torch.no_grad():
+            val_outputs = model(X_val)
+            val_loss = criterion(val_outputs, y_val)  # Compute validation loss
+
+        # Log losses
+        train_log[epoch + 1] = avg_train_loss
+        val_log[epoch + 1] = val_loss.item()
+
+        model.train()  # Switch back to training mode
+
+        # Print progress every 10 epochs
         if (epoch + 1) % 10 == 0:
-            print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_epoch_loss:.4f}")
+            print(f"Epoch [{epoch+1}/{epochs}] - Train Loss: {avg_train_loss:.4f}, Val Loss: {val_loss.item():.4f}")
 
     print("Model training complete.")
-    return training_log
+    return train_log, val_log
+
 
 # Model evaluation function
 from torch.utils.data import DataLoader, TensorDataset

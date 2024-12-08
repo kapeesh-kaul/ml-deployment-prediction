@@ -1,0 +1,7 @@
+{
+    "hidden_dim": 16,
+    "output_dim": 1,
+    "batch_size": 32,
+    "learning_rate": 0.01,
+    "epochs": 100
+}

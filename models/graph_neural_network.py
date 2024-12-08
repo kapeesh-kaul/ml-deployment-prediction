@@ -23,14 +23,35 @@ class GNN(nn.Module):
         return x
 
 # Model training function
-def train_gnn(model, train_graph, device, epochs=100, learning_rate=0.001, batch_size=32):
+def train_gnn(model, train_graph, val_graph, device, epochs=100, learning_rate=0.001, batch_size=32):
+    """
+    Trains the GNN model and logs training and evaluation (validation) losses.
+
+    Parameters:
+        model: The GNN model.
+        train_graph: Training graph data.
+        val_graph: Validation graph data.
+        device: Device to use for training ('cpu' or 'cuda').
+        epochs: Number of training epochs.
+        learning_rate: Learning rate for the optimizer.
+        batch_size: Batch size for training.
+
+    Returns:
+        train_log (dict): Training losses per epoch.
+        val_log (dict): Validation losses per epoch.
+    """
     train_loader = DataLoader([train_graph], batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader([val_graph], batch_size=batch_size, shuffle=False)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     criterion = nn.MSELoss()
+
     model.train()
-    training_log = {}
+    train_log = {}
+    val_log = {}
+
     for epoch in range(epochs):
-        total_loss = 0
+        # Training step
+        total_train_loss = 0
         for batch in train_loader:
             batch = batch.to(device)  # Move batch to GPU/CPU
             optimizer.zero_grad()
@@ -38,16 +59,33 @@ def train_gnn(model, train_graph, device, epochs=100, learning_rate=0.001, batch
             loss = criterion(out, batch.y)  # Compute loss
             loss.backward()  # Backpropagation
             optimizer.step()  # Update parameters
-            total_loss += loss.item()
+            total_train_loss += loss.item()
         
-        avg_loss = total_loss / len(train_loader)
-        training_log[epoch + 1] = avg_loss
+        avg_train_loss = total_train_loss / len(train_loader)
+        train_log[epoch + 1] = avg_train_loss
+
+        # Validation step
+        model.eval()  # Switch to evaluation mode
+        total_val_loss = 0
+        with torch.no_grad():
+            for batch in val_loader:
+                batch = batch.to(device)
+                out = model(batch.x, batch.edge_index)  # Forward pass
+                val_loss = criterion(out, batch.y)  # Compute validation loss
+                total_val_loss += val_loss.item()
         
+        avg_val_loss = total_val_loss / len(val_loader)
+        val_log[epoch + 1] = avg_val_loss
+
+        model.train()  # Switch back to training mode
+
+        # Print progress every 10 epochs
         if (epoch + 1) % 10 == 0:
-            print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}")
-    
+            print(f"Epoch [{epoch+1}/{epochs}] - Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_val_loss:.4f}")
+
     print("Model training complete.")
-    return training_log
+    return train_log, val_log
+
 
 
 # Model evaluation function
