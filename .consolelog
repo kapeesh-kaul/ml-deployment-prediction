@@ -1,0 +1,379 @@
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model polynomial_regression --overwrite
+Loaded parameters from model_params\polynomial_regression.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/500] - Train Loss: 1.7992, Val Loss: 1.7584
+Epoch [20/500] - Train Loss: 1.6626, Val Loss: 1.6247
+Epoch [30/500] - Train Loss: 1.5369, Val Loss: 1.5015
+Epoch [40/500] - Train Loss: 1.4214, Val Loss: 1.3887
+Epoch [50/500] - Train Loss: 1.3154, Val Loss: 1.2853
+Epoch [60/500] - Train Loss: 1.2180, Val Loss: 1.1904
+Epoch [70/500] - Train Loss: 1.1284, Val Loss: 1.1029
+Epoch [80/500] - Train Loss: 1.0458, Val Loss: 1.0223
+Epoch [90/500] - Train Loss: 0.9696, Val Loss: 0.9480
+Epoch [100/500] - Train Loss: 0.8994, Val Loss: 0.8794
+Epoch [110/500] - Train Loss: 0.8345, Val Loss: 0.8160
+Epoch [120/500] - Train Loss: 0.7746, Val Loss: 0.7576
+Epoch [130/500] - Train Loss: 0.7193, Val Loss: 0.7035
+Epoch [140/500] - Train Loss: 0.6681, Val Loss: 0.6535
+Epoch [150/500] - Train Loss: 0.6208, Val Loss: 0.6073
+Epoch [160/500] - Train Loss: 0.5770, Val Loss: 0.5645
+Epoch [170/500] - Train Loss: 0.5364, Val Loss: 0.5249
+Epoch [180/500] - Train Loss: 0.4988, Val Loss: 0.4881
+Epoch [190/500] - Train Loss: 0.4640, Val Loss: 0.4541
+Epoch [200/500] - Train Loss: 0.4317, Val Loss: 0.4225
+Epoch [210/500] - Train Loss: 0.4017, Val Loss: 0.3932
+Epoch [220/500] - Train Loss: 0.3740, Val Loss: 0.3661
+Epoch [230/500] - Train Loss: 0.3482, Val Loss: 0.3408
+Epoch [240/500] - Train Loss: 0.3242, Val Loss: 0.3174
+Epoch [250/500] - Train Loss: 0.3020, Val Loss: 0.2957
+Epoch [260/500] - Train Loss: 0.2814, Val Loss: 0.2755
+Epoch [270/500] - Train Loss: 0.2623, Val Loss: 0.2568
+Epoch [280/500] - Train Loss: 0.2445, Val Loss: 0.2394
+Epoch [290/500] - Train Loss: 0.2280, Val Loss: 0.2232
+Epoch [300/500] - Train Loss: 0.2126, Val Loss: 0.2082
+Epoch [310/500] - Train Loss: 0.1984, Val Loss: 0.1942
+Epoch [320/500] - Train Loss: 0.1852, Val Loss: 0.1813
+Epoch [330/500] - Train Loss: 0.1729, Val Loss: 0.1692
+Epoch [340/500] - Train Loss: 0.1615, Val Loss: 0.1581
+Epoch [350/500] - Train Loss: 0.1509, Val Loss: 0.1477
+Epoch [360/500] - Train Loss: 0.1411, Val Loss: 0.1381
+Epoch [370/500] - Train Loss: 0.1320, Val Loss: 0.1291
+Epoch [380/500] - Train Loss: 0.1235, Val Loss: 0.1208
+Epoch [390/500] - Train Loss: 0.1157, Val Loss: 0.1131
+Epoch [400/500] - Train Loss: 0.1084, Val Loss: 0.1060
+Epoch [410/500] - Train Loss: 0.1016, Val Loss: 0.0994
+Epoch [420/500] - Train Loss: 0.0954, Val Loss: 0.0932
+Epoch [430/500] - Train Loss: 0.0896, Val Loss: 0.0876
+Epoch [440/500] - Train Loss: 0.0842, Val Loss: 0.0823
+Epoch [450/500] - Train Loss: 0.0792, Val Loss: 0.0774
+Epoch [460/500] - Train Loss: 0.0747, Val Loss: 0.0729
+Epoch [470/500] - Train Loss: 0.0704, Val Loss: 0.0688
+Epoch [480/500] - Train Loss: 0.0665, Val Loss: 0.0649
+Epoch [490/500] - Train Loss: 0.0628, Val Loss: 0.0613
+Epoch [500/500] - Train Loss: 0.0595, Val Loss: 0.0581
+Model training complete.
+Model weights saved to saved_models\polynomial_regression_deg_1_lr_0.001.pth
+2024/12/08 02:26:43 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:26:50 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:26:50 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(14152450.0), 'R2 Score': 0.9408410813466173}
+Evaluation Results: {'Mean Squared Error': np.float32(14177153.0), 'R2 Score': 0.9408568984168201}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model polynomial_regression --overwrite
+Loaded parameters from model_params\polynomial_regression.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/500] - Train Loss: 2.0076, Val Loss: 2.0165
+Epoch [20/500] - Train Loss: 1.7747, Val Loss: 1.7826
+Epoch [30/500] - Train Loss: 1.5666, Val Loss: 1.5743
+Epoch [40/500] - Train Loss: 1.3849, Val Loss: 1.3924
+Epoch [50/500] - Train Loss: 1.2269, Val Loss: 1.2340
+Epoch [60/500] - Train Loss: 1.0899, Val Loss: 1.0959
+Epoch [70/500] - Train Loss: 0.9711, Val Loss: 0.9762
+Epoch [80/500] - Train Loss: 0.8684, Val Loss: 0.8726
+Epoch [90/500] - Train Loss: 0.7795, Val Loss: 0.7831
+Epoch [100/500] - Train Loss: 0.7026, Val Loss: 0.7057
+Epoch [110/500] - Train Loss: 0.6359, Val Loss: 0.6386
+Epoch [120/500] - Train Loss: 0.5779, Val Loss: 0.5804
+Epoch [130/500] - Train Loss: 0.5274, Val Loss: 0.5297
+Epoch [140/500] - Train Loss: 0.4831, Val Loss: 0.4853
+Epoch [150/500] - Train Loss: 0.4442, Val Loss: 0.4463
+Epoch [160/500] - Train Loss: 0.4099, Val Loss: 0.4119
+Epoch [170/500] - Train Loss: 0.3794, Val Loss: 0.3813
+Epoch [180/500] - Train Loss: 0.3522, Val Loss: 0.3540
+Epoch [190/500] - Train Loss: 0.3278, Val Loss: 0.3296
+Epoch [200/500] - Train Loss: 0.3059, Val Loss: 0.3076
+Epoch [210/500] - Train Loss: 0.2860, Val Loss: 0.2876
+Epoch [220/500] - Train Loss: 0.2679, Val Loss: 0.2695
+Epoch [230/500] - Train Loss: 0.2515, Val Loss: 0.2530
+Epoch [240/500] - Train Loss: 0.2364, Val Loss: 0.2379
+Epoch [250/500] - Train Loss: 0.2225, Val Loss: 0.2239
+Epoch [260/500] - Train Loss: 0.2097, Val Loss: 0.2111
+Epoch [270/500] - Train Loss: 0.1979, Val Loss: 0.1991
+Epoch [280/500] - Train Loss: 0.1869, Val Loss: 0.1881
+Epoch [290/500] - Train Loss: 0.1766, Val Loss: 0.1778
+Epoch [300/500] - Train Loss: 0.1671, Val Loss: 0.1681
+Epoch [310/500] - Train Loss: 0.1581, Val Loss: 0.1591
+Epoch [320/500] - Train Loss: 0.1498, Val Loss: 0.1507
+Epoch [330/500] - Train Loss: 0.1419, Val Loss: 0.1428
+Epoch [340/500] - Train Loss: 0.1345, Val Loss: 0.1353
+Epoch [350/500] - Train Loss: 0.1276, Val Loss: 0.1283
+Epoch [360/500] - Train Loss: 0.1211, Val Loss: 0.1217
+Epoch [370/500] - Train Loss: 0.1149, Val Loss: 0.1155
+Epoch [380/500] - Train Loss: 0.1091, Val Loss: 0.1097
+Epoch [390/500] - Train Loss: 0.1036, Val Loss: 0.1042
+Epoch [400/500] - Train Loss: 0.0985, Val Loss: 0.0989
+Epoch [410/500] - Train Loss: 0.0936, Val Loss: 0.0940
+Epoch [420/500] - Train Loss: 0.0890, Val Loss: 0.0894
+Epoch [430/500] - Train Loss: 0.0847, Val Loss: 0.0850
+Epoch [440/500] - Train Loss: 0.0806, Val Loss: 0.0809
+Epoch [450/500] - Train Loss: 0.0767, Val Loss: 0.0770
+Epoch [460/500] - Train Loss: 0.0731, Val Loss: 0.0733
+Epoch [470/500] - Train Loss: 0.0696, Val Loss: 0.0699
+Epoch [480/500] - Train Loss: 0.0664, Val Loss: 0.0666
+Epoch [490/500] - Train Loss: 0.0634, Val Loss: 0.0636
+Epoch [500/500] - Train Loss: 0.0605, Val Loss: 0.0607
+Model training complete.
+Model weights saved to saved_models\polynomial_regression_deg_2_lr_0.001.pth
+2024/12/08 02:27:24 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:27:29 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:27:29 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(14410482.0), 'R2 Score': 0.9397624759592459}
+Evaluation Results: {'Mean Squared Error': np.float32(14345544.0), 'R2 Score': 0.940154410447317}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model polynomial_regression --overwrite
+Loaded parameters from model_params\polynomial_regression.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/500] - Train Loss: 14.5760, Val Loss: 20.2196
+Epoch [20/500] - Train Loss: 12.0477, Val Loss: 17.0119
+Epoch [30/500] - Train Loss: 10.1732, Val Loss: 14.4933
+Epoch [40/500] - Train Loss: 8.5914, Val Loss: 12.3305
+Epoch [50/500] - Train Loss: 7.2211, Val Loss: 10.4533
+Epoch [60/500] - Train Loss: 6.0697, Val Loss: 8.8542
+Epoch [70/500] - Train Loss: 5.1101, Val Loss: 7.4971
+Epoch [80/500] - Train Loss: 4.3132, Val Loss: 6.3513
+Epoch [90/500] - Train Loss: 3.6563, Val Loss: 5.3925
+Epoch [100/500] - Train Loss: 3.1168, Val Loss: 4.5946
+Epoch [110/500] - Train Loss: 2.6745, Val Loss: 3.9322
+Epoch [120/500] - Train Loss: 2.3119, Val Loss: 3.3825
+Epoch [130/500] - Train Loss: 2.0139, Val Loss: 2.9262
+Epoch [140/500] - Train Loss: 1.7683, Val Loss: 2.5471
+Epoch [150/500] - Train Loss: 1.5646, Val Loss: 2.2315
+Epoch [160/500] - Train Loss: 1.3949, Val Loss: 1.9679
+Epoch [170/500] - Train Loss: 1.2525, Val Loss: 1.7469
+Epoch [180/500] - Train Loss: 1.1323, Val Loss: 1.5609
+Epoch [190/500] - Train Loss: 1.0302, Val Loss: 1.4036
+Epoch [200/500] - Train Loss: 0.9429, Val Loss: 1.2700
+Epoch [210/500] - Train Loss: 0.8678, Val Loss: 1.1560
+Epoch [220/500] - Train Loss: 0.8029, Val Loss: 1.0582
+Epoch [230/500] - Train Loss: 0.7465, Val Loss: 0.9739
+Epoch [240/500] - Train Loss: 0.6972, Val Loss: 0.9008
+Epoch [250/500] - Train Loss: 0.6539, Val Loss: 0.8372
+Epoch [260/500] - Train Loss: 0.6157, Val Loss: 0.7816
+Epoch [270/500] - Train Loss: 0.5818, Val Loss: 0.7326
+Epoch [280/500] - Train Loss: 0.5515, Val Loss: 0.6893
+Epoch [290/500] - Train Loss: 0.5243, Val Loss: 0.6508
+Epoch [300/500] - Train Loss: 0.4998, Val Loss: 0.6163
+Epoch [310/500] - Train Loss: 0.4776, Val Loss: 0.5853
+Epoch [320/500] - Train Loss: 0.4572, Val Loss: 0.5573
+Epoch [330/500] - Train Loss: 0.4386, Val Loss: 0.5319
+Epoch [340/500] - Train Loss: 0.4213, Val Loss: 0.5086
+Epoch [350/500] - Train Loss: 0.4053, Val Loss: 0.4873
+Epoch [360/500] - Train Loss: 0.3904, Val Loss: 0.4675
+Epoch [370/500] - Train Loss: 0.3764, Val Loss: 0.4492
+Epoch [380/500] - Train Loss: 0.3632, Val Loss: 0.4321
+Epoch [390/500] - Train Loss: 0.3508, Val Loss: 0.4161
+Epoch [400/500] - Train Loss: 0.3389, Val Loss: 0.4011
+Epoch [410/500] - Train Loss: 0.3277, Val Loss: 0.3870
+Epoch [420/500] - Train Loss: 0.3169, Val Loss: 0.3736
+Epoch [430/500] - Train Loss: 0.3067, Val Loss: 0.3608
+Epoch [440/500] - Train Loss: 0.2968, Val Loss: 0.3487
+Epoch [450/500] - Train Loss: 0.2874, Val Loss: 0.3372
+Epoch [460/500] - Train Loss: 0.2783, Val Loss: 0.3262
+Epoch [470/500] - Train Loss: 0.2695, Val Loss: 0.3156
+Epoch [480/500] - Train Loss: 0.2611, Val Loss: 0.3055
+Epoch [490/500] - Train Loss: 0.2530, Val Loss: 0.2958
+Epoch [500/500] - Train Loss: 0.2451, Val Loss: 0.2865
+Model training complete.
+Model weights saved to saved_models\polynomial_regression_deg_3_lr_0.001.pth
+2024/12/08 02:27:47 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:27:52 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:27:52 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(58458980.0), 'R2 Score': 0.7556345263424943}
+Evaluation Results: {'Mean Squared Error': np.float32(56413370.0), 'R2 Score': 0.7646592529257016}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model feedforward_nn --overwrite
+Loaded parameters from model_params\feedforward_nn.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/500], Train Loss: 0.5452, Val Loss: 0.4988
+Epoch [20/500], Train Loss: 0.2033, Val Loss: 0.1823
+Epoch [30/500], Train Loss: 0.1055, Val Loss: 0.1066
+Epoch [40/500], Train Loss: 0.0774, Val Loss: 0.0758
+Epoch [50/500], Train Loss: 0.0560, Val Loss: 0.0562
+Epoch [60/500], Train Loss: 0.0467, Val Loss: 0.0470
+Epoch [70/500], Train Loss: 0.0400, Val Loss: 0.0409
+Epoch [80/500], Train Loss: 0.0358, Val Loss: 0.0366
+Epoch [90/500], Train Loss: 0.0328, Val Loss: 0.0337
+Epoch [100/500], Train Loss: 0.0305, Val Loss: 0.0314
+Epoch [110/500], Train Loss: 0.0286, Val Loss: 0.0296
+Epoch [120/500], Train Loss: 0.0271, Val Loss: 0.0280
+Epoch [130/500], Train Loss: 0.0257, Val Loss: 0.0267
+Epoch [140/500], Train Loss: 0.0246, Val Loss: 0.0256
+Epoch [150/500], Train Loss: 0.0236, Val Loss: 0.0245
+Epoch [160/500], Train Loss: 0.0227, Val Loss: 0.0236
+Epoch [170/500], Train Loss: 0.0219, Val Loss: 0.0228
+Epoch [180/500], Train Loss: 0.0212, Val Loss: 0.0221
+Epoch [190/500], Train Loss: 0.0206, Val Loss: 0.0215
+Epoch [200/500], Train Loss: 0.0200, Val Loss: 0.0209
+Epoch [210/500], Train Loss: 0.0195, Val Loss: 0.0203
+Epoch [220/500], Train Loss: 0.0190, Val Loss: 0.0198
+Epoch [230/500], Train Loss: 0.0186, Val Loss: 0.0194
+Epoch [240/500], Train Loss: 0.0182, Val Loss: 0.0190
+Epoch [250/500], Train Loss: 0.0178, Val Loss: 0.0186
+Epoch [260/500], Train Loss: 0.0175, Val Loss: 0.0182
+Epoch [270/500], Train Loss: 0.0171, Val Loss: 0.0179
+Epoch [280/500], Train Loss: 0.0168, Val Loss: 0.0176
+Epoch [290/500], Train Loss: 0.0166, Val Loss: 0.0173
+Epoch [300/500], Train Loss: 0.0163, Val Loss: 0.0170
+Epoch [310/500], Train Loss: 0.0161, Val Loss: 0.0168
+Epoch [320/500], Train Loss: 0.0158, Val Loss: 0.0165
+Epoch [330/500], Train Loss: 0.0156, Val Loss: 0.0163
+Epoch [340/500], Train Loss: 0.0154, Val Loss: 0.0161
+Epoch [350/500], Train Loss: 0.0152, Val Loss: 0.0159
+Epoch [360/500], Train Loss: 0.0150, Val Loss: 0.0157
+Epoch [370/500], Train Loss: 0.0149, Val Loss: 0.0155
+Epoch [380/500], Train Loss: 0.0147, Val Loss: 0.0154
+Epoch [390/500], Train Loss: 0.0145, Val Loss: 0.0152
+Epoch [400/500], Train Loss: 0.0144, Val Loss: 0.0150
+Epoch [410/500], Train Loss: 0.0143, Val Loss: 0.0149
+Epoch [420/500], Train Loss: 0.0141, Val Loss: 0.0148
+Epoch [430/500], Train Loss: 0.0140, Val Loss: 0.0146
+Epoch [440/500], Train Loss: 0.0139, Val Loss: 0.0145
+Epoch [450/500], Train Loss: 0.0138, Val Loss: 0.0144
+Epoch [460/500], Train Loss: 0.0136, Val Loss: 0.0143
+Epoch [470/500], Train Loss: 0.0135, Val Loss: 0.0142
+Epoch [480/500], Train Loss: 0.0134, Val Loss: 0.0141
+Epoch [490/500], Train Loss: 0.0133, Val Loss: 0.0140
+Epoch [500/500], Train Loss: 0.0132, Val Loss: 0.0139
+Model training complete.
+Model weights saved to saved_models\feedforward_nn_hd_64_nl_2_lr_0.001.pth
+2024/12/08 02:28:35 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:28:40 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:28:40 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(3165986.0), 'R2 Score': 0.9867658027176539}
+Evaluation Results: {'Mean Squared Error': np.float32(3317878.2), 'R2 Score': 0.9861587429449155}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model feedforward_nn --overwrite
+Loaded parameters from model_params\feedforward_nn.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/500], Train Loss: 0.4865, Val Loss: 0.4309
+Epoch [20/500], Train Loss: 0.1487, Val Loss: 0.1392
+Epoch [30/500], Train Loss: 0.0801, Val Loss: 0.0756
+Epoch [40/500], Train Loss: 0.0590, Val Loss: 0.0567
+Epoch [50/500], Train Loss: 0.0453, Val Loss: 0.0444
+Epoch [60/500], Train Loss: 0.0379, Val Loss: 0.0377
+Epoch [70/500], Train Loss: 0.0330, Val Loss: 0.0333
+Epoch [80/500], Train Loss: 0.0298, Val Loss: 0.0301
+Epoch [90/500], Train Loss: 0.0274, Val Loss: 0.0277
+Epoch [100/500], Train Loss: 0.0255, Val Loss: 0.0259
+Epoch [110/500], Train Loss: 0.0240, Val Loss: 0.0244
+Epoch [120/500], Train Loss: 0.0228, Val Loss: 0.0232
+Epoch [130/500], Train Loss: 0.0217, Val Loss: 0.0221
+Epoch [140/500], Train Loss: 0.0208, Val Loss: 0.0213
+Epoch [150/500], Train Loss: 0.0201, Val Loss: 0.0205
+Epoch [160/500], Train Loss: 0.0194, Val Loss: 0.0198
+Epoch [170/500], Train Loss: 0.0188, Val Loss: 0.0192
+Epoch [180/500], Train Loss: 0.0183, Val Loss: 0.0187
+Epoch [190/500], Train Loss: 0.0178, Val Loss: 0.0183
+Epoch [200/500], Train Loss: 0.0174, Val Loss: 0.0179
+Epoch [210/500], Train Loss: 0.0170, Val Loss: 0.0175
+Epoch [220/500], Train Loss: 0.0166, Val Loss: 0.0172
+Epoch [230/500], Train Loss: 0.0163, Val Loss: 0.0169
+Epoch [240/500], Train Loss: 0.0160, Val Loss: 0.0166
+Epoch [250/500], Train Loss: 0.0158, Val Loss: 0.0164
+Epoch [260/500], Train Loss: 0.0155, Val Loss: 0.0161
+Epoch [270/500], Train Loss: 0.0153, Val Loss: 0.0159
+Epoch [280/500], Train Loss: 0.0151, Val Loss: 0.0157
+Epoch [290/500], Train Loss: 0.0148, Val Loss: 0.0155
+Epoch [300/500], Train Loss: 0.0146, Val Loss: 0.0153
+Epoch [310/500], Train Loss: 0.0145, Val Loss: 0.0152
+Epoch [320/500], Train Loss: 0.0143, Val Loss: 0.0150
+Epoch [330/500], Train Loss: 0.0141, Val Loss: 0.0149
+Epoch [340/500], Train Loss: 0.0140, Val Loss: 0.0147
+Epoch [350/500], Train Loss: 0.0138, Val Loss: 0.0146
+Epoch [360/500], Train Loss: 0.0137, Val Loss: 0.0145
+Epoch [370/500], Train Loss: 0.0136, Val Loss: 0.0143
+Epoch [380/500], Train Loss: 0.0134, Val Loss: 0.0142
+Epoch [390/500], Train Loss: 0.0133, Val Loss: 0.0141
+Epoch [400/500], Train Loss: 0.0132, Val Loss: 0.0140
+Epoch [410/500], Train Loss: 0.0131, Val Loss: 0.0139
+Epoch [420/500], Train Loss: 0.0130, Val Loss: 0.0138
+Epoch [430/500], Train Loss: 0.0129, Val Loss: 0.0137
+Epoch [440/500], Train Loss: 0.0128, Val Loss: 0.0136
+Epoch [450/500], Train Loss: 0.0127, Val Loss: 0.0136
+Epoch [460/500], Train Loss: 0.0127, Val Loss: 0.0135
+Epoch [470/500], Train Loss: 0.0126, Val Loss: 0.0134
+Epoch [480/500], Train Loss: 0.0125, Val Loss: 0.0133
+Epoch [490/500], Train Loss: 0.0124, Val Loss: 0.0133
+Epoch [500/500], Train Loss: 0.0124, Val Loss: 0.0132
+Model training complete.
+Model weights saved to saved_models\feedforward_nn_hd_64_nl_3_lr_0.001.pth
+2024/12/08 02:29:04 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:29:09 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:29:09 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(2953000.0), 'R2 Score': 0.987656109925964}
+Evaluation Results: {'Mean Squared Error': np.float32(3209841.0), 'R2 Score': 0.9866094427658891}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model tab_transformer --overwrite
+Loaded parameters from model_params\tab_transformer.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. One-hot encoding, normalization, standardization applied and converted to torch-tensors.
+Epoch [10/100] - Train Loss: 0.0273, Val Loss: 0.0135
+Epoch [20/100] - Train Loss: 0.0181, Val Loss: 0.0143
+Epoch [30/100] - Train Loss: 0.0156, Val Loss: 0.0134
+Epoch [40/100] - Train Loss: 0.0139, Val Loss: 0.0135
+Epoch [50/100] - Train Loss: 0.0130, Val Loss: 0.0125
+Epoch [60/100] - Train Loss: 0.0122, Val Loss: 0.0114
+Epoch [70/100] - Train Loss: 0.0118, Val Loss: 0.0117
+Epoch [80/100] - Train Loss: 0.0116, Val Loss: 0.0113
+Epoch [90/100] - Train Loss: 0.0113, Val Loss: 0.0110
+Epoch [100/100] - Train Loss: 0.0112, Val Loss: 0.0111
+Model training complete.
+Model weights saved to saved_models\tab_transformer_ed_32_nh_4_nl_2_lr_0.001.pth
+2024/12/08 02:30:35 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:30:40 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:30:40 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(2578846.8), 'R2 Score': 0.9892201143401737}
+Evaluation Results: {'Mean Squared Error': np.float32(2647838.2), 'R2 Score': 0.9889539609830094}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model gnn --overwrite
+Loaded parameters from model_params\gnn.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. Converted to graph format.
+Epoch [10/100] - Train Loss: 0.4731, Val Loss: 0.4530
+Epoch [20/100] - Train Loss: 0.2743, Val Loss: 0.2676
+Epoch [30/100] - Train Loss: 0.2273, Val Loss: 0.2358
+Epoch [40/100] - Train Loss: 0.2049, Val Loss: 0.2219
+Epoch [50/100] - Train Loss: 0.1923, Val Loss: 0.2095
+Epoch [60/100] - Train Loss: 0.1860, Val Loss: 0.2041
+Epoch [70/100] - Train Loss: 0.1823, Val Loss: 0.2021
+Epoch [80/100] - Train Loss: 0.1798, Val Loss: 0.1999
+Epoch [90/100] - Train Loss: 0.1780, Val Loss: 0.1983
+Epoch [100/100] - Train Loss: 0.1767, Val Loss: 0.1974
+Model training complete.
+Model weights saved to saved_models\gnn_hd_16_od_1_lr_0.01.pth
+2024/12/08 02:30:58 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:31:05 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:31:05 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(0.17654026), 'R2 Score': 0.8234569815608341}
+Evaluation Results: {'Mean Squared Error': np.float32(0.18979657), 'R2 Score': 0.8120969237630961}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> python .\main.py --model gnn --overwrite
+Loaded parameters from model_params\gnn.json
+Dataset loaded from syn_data/synthetic_cost_dataset.csv
+Data preprocessing complete. Converted to graph format.
+Epoch [10/200] - Train Loss: 0.3573, Val Loss: 0.3510
+Epoch [20/200] - Train Loss: 0.2600, Val Loss: 0.2629
+Epoch [30/200] - Train Loss: 0.2146, Val Loss: 0.2363
+Epoch [40/200] - Train Loss: 0.1898, Val Loss: 0.2110
+Epoch [50/200] - Train Loss: 0.1832, Val Loss: 0.2043
+Epoch [60/200] - Train Loss: 0.1782, Val Loss: 0.2017
+Epoch [70/200] - Train Loss: 0.1758, Val Loss: 0.1984
+Epoch [80/200] - Train Loss: 0.1744, Val Loss: 0.1972
+Epoch [90/200] - Train Loss: 0.1732, Val Loss: 0.1964
+Epoch [100/200] - Train Loss: 0.1723, Val Loss: 0.1954
+Epoch [110/200] - Train Loss: 0.1715, Val Loss: 0.1949
+Epoch [120/200] - Train Loss: 0.1709, Val Loss: 0.1943
+Epoch [130/200] - Train Loss: 0.1703, Val Loss: 0.1938
+Epoch [140/200] - Train Loss: 0.1698, Val Loss: 0.1934
+Epoch [150/200] - Train Loss: 0.1694, Val Loss: 0.1930
+Epoch [160/200] - Train Loss: 0.1690, Val Loss: 0.1927
+Epoch [170/200] - Train Loss: 0.1686, Val Loss: 0.1924
+Epoch [180/200] - Train Loss: 0.1682, Val Loss: 0.1921
+Epoch [190/200] - Train Loss: 0.1679, Val Loss: 0.1918
+Epoch [200/200] - Train Loss: 0.1676, Val Loss: 0.1916
+Model training complete.
+Model weights saved to saved_models\gnn_hd_32_od_1_lr_0.01.pth
+2024/12/08 02:32:48 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:32:55 WARNING mlflow.utils.requirements_utils: Found torch version (2.5.1+cu121) contains a local version label (+cu121). MLflow logged a pip requirement for this package as 'torch==2.5.1' without the local version label to make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or `pip_requirements`.
+2024/12/08 02:32:55 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+Training Evaluation Results: {'Mean Squared Error': np.float32(0.16759244), 'R2 Score': 0.8324049405439299}
+Evaluation Results: {'Mean Squared Error': np.float32(0.18311545), 'R2 Score': 0.818711366989153}
+(.venv) (base) PS C:\Users\kkape\OneDrive\Assignments\CS715\Project\ml-deployment-prediction> 
