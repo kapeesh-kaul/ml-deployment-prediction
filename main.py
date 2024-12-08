@@ -4,6 +4,7 @@ from syn_data import load_dataset
 from data_transform.preprocessing import preprocess_data
 import argparse
 
+# Polynomial regression runner
 def run_polynomial_regression(device, degree=3, learning_rate=0.001):
     df = load_dataset()
     target_column = "total_cost"
@@ -73,7 +74,7 @@ def run_tab_transformer(device, embed_dim=32, num_heads=4, num_layers=2, mlp_hid
 
     return losses, train_results, results
 
-# Main function to run the GNN
+# GNN runner
 def run_gnn(device, hidden_dim, output_dim, batch_size=32, learning_rate=0.001, epochs=20):
 
     df = load_dataset()
